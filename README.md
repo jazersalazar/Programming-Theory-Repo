@@ -4,7 +4,7 @@ Pathway's <b>Mission 3</b> : OOP Programming Theory
 ## Implementation 
 - Abstraction
 - Encapsulation
-- Inhertitance
+- Inheritance
 - Polymorphism
 
 ---
