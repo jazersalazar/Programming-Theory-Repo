@@ -22,6 +22,13 @@ public class PlayerMovement : MonoBehaviour
         // Give a value between -1 and 1
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+
+        // Look at the mouse position
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(
+                mousePosition.y - transform.position.y, 
+                mousePosition.x - transform.position.x
+            ) * Mathf.Rad2Deg - 90);
     }
 
     private void FixedUpdate() 
