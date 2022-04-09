@@ -24,11 +24,9 @@ public class PlayerMovement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
 
         // Look at the mouse position
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(
-                mousePosition.y - transform.position.y, 
-                mousePosition.x - transform.position.x
-            ) * Mathf.Rad2Deg - 90);
+        var lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        var lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, lookAngle - 90f);
     }
 
     private void FixedUpdate() 
