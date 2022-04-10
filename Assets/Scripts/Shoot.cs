@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour 
 {
-    public Transform player;
     public GameObject bullet;
     public Transform barrelTip;
 
