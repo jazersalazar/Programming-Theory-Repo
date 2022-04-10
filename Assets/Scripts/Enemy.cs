@@ -6,21 +6,21 @@ public class Enemy : MonoBehaviour
 {
     public float speed = 1.0f;
 
-    private Transform target;
+    private Transform player;
 
     void Start() 
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update() 
     {
-        var distance = Vector2.Distance(transform.position, target.position);
+        var distance = Vector2.Distance(transform.position, player.position);
 
-        if (Vector2.Distance(transform.position, target.position) > 1f)
+        if (Vector2.Distance(transform.position, player.position) > 1f)
         {
             float step = speed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, target.position, step);
+            transform.position = Vector2.MoveTowards(transform.position, player.position, step);
         }
     }
 }
