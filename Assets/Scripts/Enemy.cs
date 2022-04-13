@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Base class for all enemy.
+// INHERITANCE
 public abstract class Enemy : Unit 
 {
     public Color color;

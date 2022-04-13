@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// ABSTRACTION
 public abstract class Unit : MonoBehaviour 
 {
     public int hp;

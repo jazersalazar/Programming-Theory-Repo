@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// ENCAPSULATION
 public class Status : MonoBehaviour
 {
     private int hp;

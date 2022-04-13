@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// POLYMORPHISM
 public class Zombie : Enemy
 {
     protected override void PlayerInRange()
