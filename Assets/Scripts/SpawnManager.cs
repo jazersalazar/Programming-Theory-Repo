@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour 
 {
-    // TODO: add mutliple enemy type
-    // public GameObject[] enemyPrefab;
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefab;
+    public GameObject[] specialPrefab;
     public GameObject[] spawnPoints;
 
     public int enemyCount;
@@ -39,7 +38,16 @@ public class SpawnManager : MonoBehaviour
     {
         for (int i = 0; i < enemiesToSpawn; i++)
         {
-            Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+            // Summon special zombie with 20% chance
+            bool summonSpecial = Random.Range(0f, 100.0f) >= 80f ? true : false;
+            if (summonSpecial)
+            {
+                int index = Random.Range(0, specialPrefab.Length);
+                Instantiate(specialPrefab[index], GenerateSpawnPosition(), specialPrefab[index].transform.rotation);
+            } else {
+                int index = Random.Range(0, enemyPrefab.Length);
+                Instantiate(enemyPrefab[index], GenerateSpawnPosition(), enemyPrefab[index].transform.rotation);
+            }
         }
     }
 

@@ -107,8 +107,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -263,10 +263,10 @@ GameObject:
   - component: {fileID: 8526329459230349343}
   - component: {fileID: 8526329459230349342}
   - component: {fileID: 8526329459230349341}
-  - component: {fileID: 8526329459230349340}
-  - component: {fileID: 3217596437890958268}
+  - component: {fileID: 4172289688091542191}
+  - component: {fileID: -2797942498964734656}
   m_Layer: 0
-  m_Name: Zombie
+  m_Name: Hunter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -325,7 +325,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &8526329459230349340
+--- !u!114 &4172289688091542191
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -334,16 +334,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8526329459230349339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2458614f09a31e7409c3aae0c95d3174, type: 3}
+  m_Script: {fileID: 11500000, guid: 14037be7750f1f54dbc4838cf379a788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 50
+  hp: 150
   stamina: 100
   currentHP: 0
-  color: {r: 1, g: 0, b: 0, a: 0}
-  speed: 3
-  attackRange: 1
---- !u!114 &3217596437890958268
+  color: {r: 1, g: 0, b: 0.953671, a: 0}
+  speed: 5
+  attackRange: 5
+--- !u!114 &-2797942498964734656
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -6,13 +6,15 @@ public abstract class Unit : MonoBehaviour
 {
     public int hp;
     public int stamina;
+    public int currentHP;
 
     private Status status;
 
-    void Start() 
+    protected virtual void Start() 
     {
         status = GetComponent<Status>();
         SetHP(hp);
+        currentHP = GetHP();
     }
 
     public int GetHP()
@@ -33,5 +35,10 @@ public abstract class Unit : MonoBehaviour
     public void SetStamina(int newStamina)
     {
         status.Stamina = newStamina;
+    }
+    
+    public virtual string GetName()
+    {
+        return "Unit";
     }
 }

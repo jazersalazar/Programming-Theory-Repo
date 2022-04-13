@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zombie : Enemy
+public class Boomer : Enemy 
 {
     protected override void PlayerInRange()
     {
-        // TODO: add the attack logic here
+        // TODO: add boomer logic here
     }
 
     public override string GetName()
     {
-        return "Zombie";
+        return "Boomer";
     }
 }
