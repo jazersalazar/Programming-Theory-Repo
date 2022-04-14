@@ -23,7 +23,7 @@ public abstract class Unit : MonoBehaviour
         return status.HP;
     }
 
-    public void SetHP(int newHP)
+    public virtual void SetHP(int newHP)
     {
         status.HP = newHP;
     }
