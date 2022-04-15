@@ -25,18 +25,9 @@ public class Player : Unit
         hpBar.value = newHP;
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHP -= damage;
         SetHP(currentHP);
-    }
-
-    void Update()
-    {
-        // TODO: add an actual damage system
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
     }
 }

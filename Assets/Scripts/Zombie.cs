@@ -7,7 +7,7 @@ public class Zombie : Enemy
 {
     protected override void PlayerInRange()
     {
-        // TODO: add the attack logic here
+        // TODO: add the zombie logic here
     }
 
     public override string GetName()

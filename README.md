@@ -12,9 +12,9 @@ Pathway's <b>Mission 3</b> : OOP Programming Theory
 - Title Screen
 - Score System
 - Bullet Limit System
-- Damage System
 - Weapon Change System
 - Stamina System
-
+- Gameover System
+ 
 ---
 View Collection: <a href="https://github.com/jazersalazar/Unity-Junior-Programmer">Unity Junior Programmer</a>

@@ -343,6 +343,9 @@ MonoBehaviour:
   color: {r: 0.8517761, g: 1, b: 0, a: 0}
   speed: 5
   attackRange: 1
+  attackDamage: 0
+  attackCooldown: 1
+  canAttack: 1
 --- !u!114 &-2797942498964734656
 MonoBehaviour:
   m_ObjectHideFlags: 0
