@@ -7,6 +7,7 @@ public class Boomer : Enemy
     protected override void PlayerInRange()
     {
         // TODO: add boomer logic here
+        base.PlayerInRange();
     }
 
     public override string GetName()
