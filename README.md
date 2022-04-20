@@ -15,6 +15,10 @@ Pathway's <b>Mission 3</b> : OOP Programming Theory
 - Weapon Change System
 - Stamina System
 - Gameover System
- 
+- Throwables
+- Healing Items
+- Primaray Weapon
+- Secondary Weapon
+
 ---
 View Collection: <a href="https://github.com/jazersalazar/Unity-Junior-Programmer">Unity Junior Programmer</a>
