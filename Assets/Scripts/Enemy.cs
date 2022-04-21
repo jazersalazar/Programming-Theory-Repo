@@ -12,9 +12,13 @@ public abstract class Enemy : Unit
     public int attackDamage = 1;
     public float attackCooldown = 1.0f;
     public bool canAttack = true;
+    public bool isMoving = false;
+    public Vector2 destination;
 
     protected Transform target;
     protected Player player;
+
+    private GameManager gm;
 
     protected override void Start() 
     {
@@ -22,24 +26,41 @@ public abstract class Enemy : Unit
         target = GameObject.FindGameObjectWithTag("Player").transform;
         player = target.GetComponent<Player>();
         SetColor();
+        gm = GameObject.FindObjectOfType<GameManager>();
     }
 
-    protected virtual void Update() 
+    protected virtual void Update()
     {
-        var distance = Vector2.Distance(gameObject.transform.position, target.position);
-
-        // Move to player until it reach an attack range
-        if (Vector2.Distance(gameObject.transform.position, target.position) > attackRange)
+        if (gm.isAlive)
         {
-            float step = speed * Time.deltaTime;
-            gameObject.transform.position = Vector2.MoveTowards(transform.position, target.position, step);
+            destination = player.transform.position;
         }
         else
         {
+            // if the player is dead, make zombie move to random position
+            if (!isMoving)
+            {
+                destination = GetNewDestination();
+            }
+        }
+
+        var distance = Vector2.Distance(gameObject.transform.position, destination);
+
+        // Move to player until it reach an attack range
+        if (Vector2.Distance(gameObject.transform.position, destination) > attackRange)
+        {
+            float step = speed * Time.deltaTime;
+            gameObject.transform.position = Vector2.MoveTowards(transform.position, destination, step);
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
             PlayerInRange();
         }
     }
 
+    // TODO: change function name since it now has a different purpose
     protected virtual void PlayerInRange()
     {
         if (canAttack)
@@ -60,5 +81,24 @@ public abstract class Enemy : Unit
     {
         var sr = GetComponentInChildren<SpriteRenderer>();
         sr.color = new Color(color.r, color.g, color.b, 1);
+    }
+
+    Vector2 GetNewDestination()
+    {
+        float moveRange = 10.0f;
+        Vector2 enemyPos = gameObject.transform.position;
+
+        float newX = enemyPos.x + Random.Range(-moveRange, moveRange);
+        float newY = enemyPos.y + Random.Range(-moveRange, moveRange);
+
+        return new Vector2(newX, newY);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Wall")
+        {
+            isMoving = false;
+        }
     }
 }

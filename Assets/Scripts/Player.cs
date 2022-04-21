@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class Player : Unit 
 {
     public Slider hpBar;
+    private GameManager gm;
 
     protected override void Start()
     {
         base.Start();
         SetMaxHP(hp);
+        gm = GameObject.FindObjectOfType<GameManager>();
     }
 
     public void SetMaxHP(int maxHP)
@@ -29,5 +31,10 @@ public class Player : Unit
     {
         currentHP -= damage;
         SetHP(currentHP);
+
+        if (currentHP <= 0)
+        {
+            gm.GameOver();
+        }
     }
 }
