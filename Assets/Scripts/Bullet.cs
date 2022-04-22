@@ -5,6 +5,12 @@ using UnityEngine;
 public class Bullet : MonoBehaviour 
 {
     public GameObject explosion;
+    private GameManager gm;
+
+    private void Start()
+    {
+        gm = GameObject.FindObjectOfType<GameManager>();
+    }
 
     private void OnBecameInvisible()
     {
@@ -24,6 +30,12 @@ public class Bullet : MonoBehaviour
             // GameObject e = Instantiate(explosion) as GameObject;
             // e.transform.position = transform.position;
             Destroy(other.gameObject);
+
+            gm.AddKill();
+            if (other.GetComponent<Status>().IsSpecial)
+            {
+                gm.AddSpecialKill();
+            }
         }
     }
 }

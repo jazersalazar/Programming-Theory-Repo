@@ -7,6 +7,7 @@ public class Status : MonoBehaviour
 {
     private int hp;
     private int stamina;
+    public bool isSpecial = false;
 
     public int HP
     {
@@ -18,5 +19,11 @@ public class Status : MonoBehaviour
     {
         get { return stamina; }
         set { stamina = value; }
+    }
+
+    public bool IsSpecial
+    {
+        get { return isSpecial; }
+        set { isSpecial = value; }
     }
 }

@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3217596437890958268, guid: 7a587df01e6001f47895cbb031b6822e, type: 3}
+      propertyPath: isSpecial
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8526329459230349339, guid: 7a587df01e6001f47895cbb031b6822e, type: 3}
       propertyPath: m_Name
       value: Zombie Night
@@ -26,6 +30,22 @@ PrefabInstance:
     - target: {fileID: 8526329459230349340, guid: 7a587df01e6001f47895cbb031b6822e, type: 3}
       propertyPath: color.r
       value: 0.49056602
+      objectReference: {fileID: 0}
+    - target: {fileID: 8526329459230349340, guid: 7a587df01e6001f47895cbb031b6822e, type: 3}
+      propertyPath: isSpecial
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8526329459230349342, guid: 7a587df01e6001f47895cbb031b6822e, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8526329459230349342, guid: 7a587df01e6001f47895cbb031b6822e, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8526329459230349342, guid: 7a587df01e6001f47895cbb031b6822e, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8526329459230349343, guid: 7a587df01e6001f47895cbb031b6822e, type: 3}
       propertyPath: m_RootOrder

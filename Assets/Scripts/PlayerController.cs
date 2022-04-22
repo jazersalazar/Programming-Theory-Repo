@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        endOfAiming = Input.GetButton("Fire1");
+        endOfAiming = Input.GetButtonDown("Fire1");
     }
     
     void Move()

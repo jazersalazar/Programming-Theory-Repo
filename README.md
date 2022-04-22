@@ -10,11 +10,9 @@ Pathway's <b>Mission 3</b> : OOP Programming Theory
 
 ## TODOs
 - Title Screen
-- Score System
 - Bullet Limit System
 - Weapon Change System
 - Stamina System
-- Gameover System
 - Throwables
 - Healing Items
 - Primaray Weapon
