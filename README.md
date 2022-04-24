@@ -15,7 +15,7 @@ Pathway's <b>Mission 3</b> : OOP Programming Theory
 - Stamina System
 - Throwables
 - Healing Items
-- Primaray Weapon
+- Primary Weapon
 - Secondary Weapon
 
 ---
