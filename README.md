@@ -10,13 +10,10 @@ Pathway's <b>Mission 3</b> : OOP Programming Theory
 
 ## TODOs
 - Title Screen
-- Bullet Limit System
-- Weapon Change System
 - Stamina System
 - Throwables
 - Healing Items
-- Primary Weapon
-- Secondary Weapon
+- Bullet Limit System
 
 ---
 View Collection: <a href="https://github.com/jazersalazar/Unity-Junior-Programmer">Unity Junior Programmer</a>

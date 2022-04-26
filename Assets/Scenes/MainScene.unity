@@ -3577,6 +3577,9 @@ MonoBehaviour:
   - {fileID: 1225969576}
   - {fileID: 672149185}
   - {fileID: 762152466}
+  weaponPrefab:
+  - {fileID: 7873457956602124364, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
+  - {fileID: 7873457956602124364, guid: 40c574fe51f8d25428bcaa4c8c1f1772, type: 3}
   enemyCount: 0
   waveCount: 1
 --- !u!1 &2037845341
