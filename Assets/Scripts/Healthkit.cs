@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour 
+public class Healthkit : MonoBehaviour 
 {
-    public string gunName;
-    public int magazineSize, bulletsPerFire;
-    public float damage, reloadTime, fireRate, bulletSpread;
-    public bool automatic;
+    public int recoverPoints;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
+            int newHP = other.GetComponent<Status>().HP + recoverPoints;
+            other.GetComponent<Player>().SetHP(newHP);
             Destroy(gameObject);
         }
     }

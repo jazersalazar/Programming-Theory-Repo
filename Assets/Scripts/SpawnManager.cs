@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] enemyPrefab;
     public GameObject[] specialPrefab;
     public GameObject[] spawnPoints;
-    public GameObject[] weaponPrefab;
+    public GameObject[] droppablesPrefab;
 
     public int enemyCount;
     public int waveCount = 1;
@@ -60,9 +60,9 @@ public class SpawnManager : MonoBehaviour
         return randomPosition;
     }
 
-    public void SpawnWeapon(Transform other)
+    public void SpawnDroppables(Transform other)
     {
-        int index = Random.Range(0, weaponPrefab.Length);
-        Instantiate(weaponPrefab[index], other.position, other.rotation);
+        int index = Random.Range(0, droppablesPrefab.Length);
+        Instantiate(droppablesPrefab[index], other.position, other.rotation);
     }
 }

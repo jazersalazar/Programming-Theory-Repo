@@ -32,11 +32,11 @@ public class Bullet : MonoBehaviour
             // GameObject e = Instantiate(explosion) as GameObject;
             // e.transform.position = transform.position;
 
-            // Drop random weapon with 10% chance
-            bool dropWeapon = Random.Range(0f, 100.0f) >= 90f ? true : false;
-            if (dropWeapon)
+            // Drop random items with 10% chance
+            bool dropItems = Random.Range(0f, 100.0f) >= 90f ? true : false;
+            if (dropItems)
             {
-                sm.SpawnWeapon(other.transform);
+                sm.SpawnDroppables(other.transform);
             }
 
             gm.AddKill();

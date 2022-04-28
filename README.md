@@ -12,7 +12,6 @@ Pathway's <b>Mission 3</b> : OOP Programming Theory
 - Title Screen
 - Stamina System
 - Throwables
-- Healing Items
 - Bullet Limit System
 
 ---
