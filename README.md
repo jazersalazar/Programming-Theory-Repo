@@ -9,8 +9,8 @@ Pathway's <b>Mission 3</b> : OOP Programming Theory
 - Spawn Manager
 
 ## TODOs
-- Title Screen
 - Stamina System
+- Weapon Change System
 - Throwables
 - Bullet Limit System
 
