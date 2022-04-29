@@ -33,7 +33,8 @@ public class Bullet : MonoBehaviour
             // e.transform.position = transform.position;
 
             // Drop random items with 10% chance
-            bool dropItems = Random.Range(0f, 100.0f) >= 90f ? true : false;
+            // bool dropItems = Random.Range(0f, 100.0f) >= 90f ? true : false;
+            bool dropItems = true;
             if (dropItems)
             {
                 sm.SpawnDroppables(other.transform);

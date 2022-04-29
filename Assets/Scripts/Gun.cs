@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour 
 {
-    public string gunName;
-    public int magazineSize, bulletsPerFire;
+    public string shortName;
+    public int bulletsCount, magazineSize, bulletsPerFire;
     public float damage, reloadTime, fireRate, bulletSpread;
     public bool automatic;
 
@@ -14,6 +14,7 @@ public class Gun : MonoBehaviour
         if (other.tag == "Player")
         {
             Destroy(gameObject);
+            other.GetComponent<Player>().ChangeGun(gameObject.GetComponent<Gun>());
         }
     }
 }

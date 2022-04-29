@@ -97,15 +97,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdaa4b28947a68f49933f3c67759c9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: Shotgun
-  magazineSize: 24
+  shortName: S
+  bulletsCount: 60
+  magazineSize: 12
   bulletsPerFire: 2
   damage: 20
   reloadTime: 1
   fireRate: 1
   bulletSpread: 10
   automatic: 0
-  acronym: {fileID: 7873457956762102847}
 --- !u!61 &7873457956602124352
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -239,8 +239,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4282664004
+  m_fontColor: {r: 0.26666668, g: 0.26666668, b: 0.26666668, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

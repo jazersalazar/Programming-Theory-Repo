@@ -10,7 +10,7 @@ Pathway's <b>Mission 3</b> : OOP Programming Theory
 
 ## TODOs
 - Stamina System
-- Weapon Change System
+- Dynamic Gun System
 - Throwables
 - Bullet Limit System
 

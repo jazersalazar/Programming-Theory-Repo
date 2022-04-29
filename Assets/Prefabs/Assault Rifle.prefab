@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7873457956602124365}
   - component: {fileID: 7873457956602124352}
   m_Layer: 0
-  m_Name: Machine Gun
+  m_Name: Assault Rifle
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,15 +97,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdaa4b28947a68f49933f3c67759c9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: Machine Gun
-  magazineSize: 100
+  shortName: AR
+  bulletsCount: 300
+  magazineSize: 50
   bulletsPerFire: 5
   damage: 10
   reloadTime: 1
   fireRate: 1
   bulletSpread: 2
   automatic: 1
-  acronym: {fileID: 7873457956762102847}
 --- !u!61 &7873457956602124352
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: M
+  m_text: AR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -239,8 +239,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4282664004
+  m_fontColor: {r: 0.26666668, g: 0.26666668, b: 0.26666668, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -257,8 +257,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 5
+  m_fontSizeBase: 5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
