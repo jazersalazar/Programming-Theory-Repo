@@ -340,10 +340,10 @@ MonoBehaviour:
   hp: 150
   currentHP: 0
   color: {r: 1, g: 0, b: 0.953671, a: 0}
-  speed: 5
-  attackRange: 5
+  speed: 15
+  attackRange: 3
   attackDamage: 10
-  attackCooldown: 1
+  attackCooldown: 0.3
   canAttack: 1
   isMoving: 0
   destination: {x: 0, y: 0}
