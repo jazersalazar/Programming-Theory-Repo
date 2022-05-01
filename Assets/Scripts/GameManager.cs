@@ -10,13 +10,17 @@ public class GameManager : MonoBehaviour
     public int specialKillCount = 0;
 
     public GameObject gameoverScreen;
+    public GameObject player;
+    public TextMeshProUGUI killCountText;
+    public TextMeshProUGUI specialKillCountText;
 
     public void GameOver()
     {
         isAlive = false;
         gameoverScreen.SetActive(true);
-        GameObject.Find("Killed").GetComponent<TextMeshProUGUI>().text = "Killed: " + killCount;
-        GameObject.Find("Special").GetComponent<TextMeshProUGUI>().text = "Special: " + specialKillCount;
+        killCountText.text = "Killed: " + killCount;
+        specialKillCountText.text = "Special: " + specialKillCount;
+        player.SetActive(false);
     }
 
     public void AddKill()

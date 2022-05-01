@@ -1675,6 +1675,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715083802}
   m_CullTransparentMesh: 1
+--- !u!1 &726099409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7953396887213390857, guid: 2ec5264993ac23b479d108fd7b3a1515, type: 3}
+  m_PrefabInstance: {fileID: 7953396886596639192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &726099410 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7953396887213390858, guid: 2ec5264993ac23b479d108fd7b3a1515, type: 3}
@@ -3804,6 +3809,9 @@ MonoBehaviour:
   killCount: 0
   specialKillCount: 0
   gameoverScreen: {fileID: 439071250}
+  player: {fileID: 726099409}
+  killCountText: {fileID: 464775427}
+  specialKillCountText: {fileID: 1078270644}
 --- !u!4 &1870278415
 Transform:
   m_ObjectHideFlags: 0
