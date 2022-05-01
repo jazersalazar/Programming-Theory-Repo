@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag != "Bullet")
+        if(other.tag != "Bullet" && other.tag != "Item")
         {
             Destroy(gameObject);
         }
@@ -32,6 +32,7 @@ public class Bullet : MonoBehaviour
             // GameObject e = Instantiate(explosion) as GameObject;
             // e.transform.position = transform.position;
 
+            // TODO: maybe move this on destroy event of enemy
             // Drop random items with 10% chance
             bool dropItems = Random.Range(0f, 100.0f) >= 90f ? true : false;
             if (dropItems)

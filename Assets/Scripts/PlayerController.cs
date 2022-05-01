@@ -67,9 +67,29 @@ public class PlayerController : MonoBehaviour
     {
         if (shootGun && !isReloading && int.Parse(player.magazineBullets.text) > 0)
         {
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            bullet.GetComponent<Rigidbody2D>().velocity = firePoint.up * BULLET_BASE_SPEED;
-            player.ReduceBullets(1);
+            int bulletCount = player.playerGun.bulletsPerFire;
+            player.ReduceBullets(bulletCount);
+            
+            if (player.gunName.text == "SG") {
+                bulletCount = 6;
+            }
+
+            float angleStep = player.playerGun.bulletSpread / bulletCount;
+            float aimAngle = firePoint.rotation.eulerAngles.z;
+            float centeringOffset = (player.playerGun.bulletSpread / 2) + (angleStep / 2); //offsets every projectile so the spread is centered on the mouse cursor
+
+            for (int i = 0; i < bulletCount; i++)
+            {
+                float currentBulletAngle = Random.Range(0, angleStep * bulletCount);
+                Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, aimAngle + currentBulletAngle - centeringOffset));
+                
+                GameObject bullet = Instantiate(bulletPrefab, firePoint.position, rotation);
+
+                bullet.transform.position += bullet.transform.up * i / bulletCount;
+
+                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                rb.AddForce(bullet.transform.up * BULLET_BASE_SPEED, ForceMode2D.Impulse);
+            }
         }
     }
 
@@ -77,7 +97,13 @@ public class PlayerController : MonoBehaviour
     {
         if (reloadGun) {
             isReloading = true;
-            isReloading = player.ReloadGun();
+            Invoke("PlayerReload", player.playerGun.reloadTime);
         }
+    }
+
+    void PlayerReload()
+    {
+        player.ReloadGun();
+        isReloading = false;
     }
 }

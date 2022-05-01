@@ -7058,7 +7058,7 @@ MonoBehaviour:
   - {fileID: 7873457956602124364, guid: 381e226ca739ac64bbeb108c3ee9ca41, type: 3}
   - {fileID: 7873457956602124364, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
   - {fileID: 7873457956602124364, guid: 40c574fe51f8d25428bcaa4c8c1f1772, type: 3}
-  enemyCount: 0
+  enemyCount: 1
   waveCount: 1
 --- !u!1 &2037845341
 GameObject:
@@ -7439,6 +7439,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 601997408}
     - target: {fileID: 7953396885309290939, guid: 2ec5264993ac23b479d108fd7b3a1515, type: 3}
+      propertyPath: playerGun
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953396885309290939, guid: 2ec5264993ac23b479d108fd7b3a1515, type: 3}
+      propertyPath: defaultGun
+      value: 
+      objectReference: {fileID: 7873457956602124365, guid: 28c079768191c4b43bc62a627adeb8f3, type: 3}
+    - target: {fileID: 7953396885309290939, guid: 2ec5264993ac23b479d108fd7b3a1515, type: 3}
       propertyPath: totalBullets
       value: 
       objectReference: {fileID: 1293968572}
@@ -7497,6 +7505,10 @@ PrefabInstance:
     - target: {fileID: 7953396887213390858, guid: 2ec5264993ac23b479d108fd7b3a1515, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953396887213390861, guid: 2ec5264993ac23b479d108fd7b3a1515, type: 3}
+      propertyPath: BULLET_BASE_SPEED
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec5264993ac23b479d108fd7b3a1515, type: 3}

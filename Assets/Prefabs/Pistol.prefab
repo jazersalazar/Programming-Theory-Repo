@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7873457956602124365}
   - component: {fileID: 7873457956602124352}
   m_Layer: 0
-  m_Name: Assault Rifle
+  m_Name: Pistol
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,15 +97,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdaa4b28947a68f49933f3c67759c9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shortName: AR
-  bulletsCount: 300
-  magazineSize: 50
-  bulletsPerFire: 5
-  damage: 10
-  reloadTime: 1
-  fireRate: 0.5
-  bulletSpread: 3
-  automatic: 1
+  shortName: P
+  bulletsCount: -1
+  magazineSize: 12
+  bulletsPerFire: 1
+  damage: 5
+  reloadTime: 0.5
+  fireRate: 1
+  bulletSpread: 0
+  automatic: 0
 --- !u!61 &7873457956602124352
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AR
+  m_text: P
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

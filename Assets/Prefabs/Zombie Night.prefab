@@ -35,6 +35,10 @@ PrefabInstance:
       propertyPath: isSpecial
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8526329459230349340, guid: 7a587df01e6001f47895cbb031b6822e, type: 3}
+      propertyPath: attackCooldown
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 8526329459230349342, guid: 7a587df01e6001f47895cbb031b6822e, type: 3}
       propertyPath: m_Mass
       value: 100

@@ -11,8 +11,8 @@ public class Player : Unit
     public TextMeshProUGUI magazineBullets;
     public TextMeshProUGUI totalBullets;
     private GameManager gm;
-    private int magazineSize;
-    private float reloadTime;
+    public Gun playerGun;
+    public Gun defaultGun;
 
     protected override void Start()
     {
@@ -47,67 +47,64 @@ public class Player : Unit
 
     public void ChangeGun()
     {
-        gunName.text = "P";
-        magazineBullets.text = "12";
-        magazineSize = 12;
-        totalBullets.text = "∞";
-        reloadTime = 0.5f;
+        gunName.text = defaultGun.shortName;
+        magazineBullets.text = defaultGun.magazineSize.ToString();
+        totalBullets.text = ValidateBulletCount(defaultGun.bulletsCount);
+
+        playerGun = defaultGun;
     }
 
     public void ChangeGun(Gun gun)
     {
         gunName.text = gun.shortName;
         magazineBullets.text = gun.magazineSize.ToString();
-        magazineSize = gun.magazineSize;
         totalBullets.text = gun.bulletsCount.ToString();
-        reloadTime = gun.reloadTime;
+
+        playerGun = gun;
     }
 
-    public void ReduceBullets(int bulletCount)
+    public void ReduceBullets(int bulletCount = 1)
     {
         int remainingBullets = int.Parse(magazineBullets.text) - bulletCount;
         magazineBullets.text = remainingBullets.ToString();
 
         if (remainingBullets == 0) {
-            if (GetTotalBullets() == 0)
+            if (playerGun.bulletsCount == 0 && playerGun != defaultGun)
             {
-                ChangeGun();
+                Invoke("ChangeGun", playerGun.reloadTime);
             }
             else 
             {
-                Invoke("ReloadGun", reloadTime);
+                Invoke("ReloadGun", playerGun.reloadTime);
             }
         }
     }
 
-    public bool ReloadGun()
+    public void ReloadGun()
     {
-        
         int bulletCount = 0;
-        int remainingBullets = GetTotalBullets();
 
-        if (int.Parse(magazineBullets.text) == magazineSize || remainingBullets == 0) return false;
+        if (int.Parse(magazineBullets.text) == playerGun.magazineSize) return;
 
-        if (remainingBullets > magazineSize)
+        if (playerGun.bulletsCount > playerGun.magazineSize || playerGun.bulletsCount < 0)
         {
-            bulletCount = magazineSize;
+            bulletCount = playerGun.magazineSize;
         }
         else
         {
-            bulletCount = remainingBullets;
+            bulletCount = playerGun.bulletsCount;
         }
-        remainingBullets -= bulletCount;
+        
+        if (playerGun.bulletsCount > 0) {
+            playerGun.bulletsCount -= bulletCount - int.Parse(magazineBullets.text);
+        }
 
         magazineBullets.text = bulletCount.ToString();
-        if (gunName.text != "P") {
-            totalBullets.text = remainingBullets.ToString();
-        }
-
-        return false;
+        totalBullets.text = ValidateBulletCount(playerGun.bulletsCount);
     }
 
-    public int GetTotalBullets()
+    public string ValidateBulletCount(int bulletCount)
     {
-        return gunName.text == "P" ? 99 : int.Parse(totalBullets.text); 
+        return bulletCount >= 0 ? bulletCount.ToString() : "∞";
     }
 }
