@@ -6,7 +6,6 @@ using UnityEngine;
 public abstract class Unit : MonoBehaviour 
 {
     public int hp;
-    public int stamina;
     public int currentHP;
 
     private Status status;
@@ -28,16 +27,6 @@ public abstract class Unit : MonoBehaviour
         status.HP = newHP;
     }
 
-    public int GetStamina()
-    {
-        return status.Stamina;
-    }
-
-    public void SetStamina(int newStamina)
-    {
-        status.Stamina = newStamina;
-    }
-    
     public virtual string GetName()
     {
         return "Unit";
