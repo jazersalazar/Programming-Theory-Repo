@@ -11,7 +11,6 @@ Pathway's <b>Mission 3</b> : OOP Programming Theory
 ## TODOs
 - Dynamic Gun System
 - Throwables
-- Bullet Limit System
 
 ---
 View Collection: <a href="https://github.com/jazersalazar/Unity-Junior-Programmer">Unity Junior Programmer</a>

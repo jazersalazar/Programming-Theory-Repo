@@ -102,8 +102,8 @@ MonoBehaviour:
   magazineSize: 12
   bulletsPerFire: 2
   damage: 20
-  reloadTime: 1
-  fireRate: 1
+  reloadTime: 2
+  fireRate: 2
   bulletSpread: 10
   automatic: 0
 --- !u!61 &7873457956602124352

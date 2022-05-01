@@ -14,13 +14,16 @@ public class PlayerController : MonoBehaviour
     public Vector2 movementDirection;
     public Vector2 mousePosition;
     public float movementSpeed;
-    public bool endOfAiming;
+    public bool isReloading;
+    private bool shootGun;
+    private bool reloadGun;
 
     [Space]
     [Header("References:")]
     public Rigidbody2D rb;
     public GameObject crosshair;
     public Transform firePoint;
+    public Player player;
 
     [Space]
     [Header("Prefabs:")]
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour
         ProcessInput();
         Move();
         Aim();
+        Reload();
         Shoot();
     }
 
@@ -42,7 +46,8 @@ public class PlayerController : MonoBehaviour
 
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        endOfAiming = Input.GetButtonDown("Fire1");
+        shootGun = Input.GetButtonDown("Fire1");
+        reloadGun = Input.GetKeyDown(KeyCode.R);
     }
     
     void Move()
@@ -60,10 +65,19 @@ public class PlayerController : MonoBehaviour
 
     void Shoot()
     {
-        if (endOfAiming)
+        if (shootGun && !isReloading && int.Parse(player.magazineBullets.text) > 0)
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             bullet.GetComponent<Rigidbody2D>().velocity = firePoint.up * BULLET_BASE_SPEED;
+            player.ReduceBullets(1);
+        }
+    }
+
+    void Reload()
+    {
+        if (reloadGun) {
+            isReloading = true;
+            isReloading = player.ReloadGun();
         }
     }
 }
