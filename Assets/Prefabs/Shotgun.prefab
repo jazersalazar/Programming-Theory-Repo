@@ -106,6 +106,8 @@ MonoBehaviour:
   fireRate: 2
   bulletSpread: 50
   automatic: 0
+  shotAudio: {fileID: 8300000, guid: c8f4dbea5871f1442b4434a5d744cb22, type: 3}
+  reloadAudio: {fileID: 8300000, guid: 8d977c7355a620048b3e201ef423ed9d, type: 3}
 --- !u!61 &7873457956602124352
 BoxCollider2D:
   m_ObjectHideFlags: 0

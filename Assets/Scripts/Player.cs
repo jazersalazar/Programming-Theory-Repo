@@ -7,12 +7,11 @@ using TMPro;
 public class Player : Unit 
 {
     public Slider hpBar;
-    public TextMeshProUGUI gunName;
-    public TextMeshProUGUI magazineBullets;
-    public TextMeshProUGUI totalBullets;
+    public TextMeshProUGUI gunName, magazineBullets, totalBullets;
+    public Gun playerGun, defaultGun;
+    public AudioSource gunAudio;
+
     private GameManager gm;
-    public Gun playerGun;
-    public Gun defaultGun;
 
     protected override void Start()
     {
@@ -20,6 +19,7 @@ public class Player : Unit
         SetMaxHP(hp);
         ChangeGun();
         gm = GameObject.FindObjectOfType<GameManager>();
+        gunAudio = gameObject.GetComponent<AudioSource>();
     }
 
     public void SetMaxHP(int maxHP)
@@ -61,12 +61,15 @@ public class Player : Unit
         totalBullets.text = gun.bulletsCount.ToString();
 
         playerGun = gun;
+
+        LoadGunAudio(playerGun.reloadAudio);
     }
 
     public void ReduceBullets(int bulletCount = 1)
     {
         int remainingBullets = int.Parse(magazineBullets.text) - bulletCount;
         magazineBullets.text = remainingBullets.ToString();
+        LoadGunAudio(playerGun.shotAudio);
 
         if (remainingBullets == 0) {
             if (playerGun.bulletsCount == 0 && playerGun != defaultGun)
@@ -101,10 +104,26 @@ public class Player : Unit
 
         magazineBullets.text = bulletCount.ToString();
         totalBullets.text = ValidateBulletCount(playerGun.bulletsCount);
+        LoadGunAudio(playerGun.reloadAudio);
     }
 
     public string ValidateBulletCount(int bulletCount)
     {
         return bulletCount >= 0 ? bulletCount.ToString() : "∞";
+    }
+
+    private void LoadGunAudio(AudioClip clip)
+    {
+        if (clip != gunAudio.clip)
+        {
+            gunAudio.clip = clip;
+        }
+
+        if (gunAudio.isPlaying)
+        {
+            gunAudio.Stop();
+        }
+
+        gunAudio.Play();
     }
 }

@@ -10,7 +10,6 @@ Pathway's <b>Mission 3</b> : OOP Programming Theory
 
 ## TODOs
 - Particle System
-- Sound System
 
 ---
 View Collection: <a href="https://github.com/jazersalazar/Unity-Junior-Programmer">Unity Junior Programmer</a>
