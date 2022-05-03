@@ -9,7 +9,8 @@ public class Player : Unit
     public Slider hpBar;
     public TextMeshProUGUI gunName, magazineBullets, totalBullets;
     public Gun playerGun, defaultGun;
-    public AudioSource gunAudio;
+    public AudioSource gunAudioSource;
+    public AudioClip pickupAudio;
 
     private GameManager gm;
 
@@ -19,7 +20,7 @@ public class Player : Unit
         SetMaxHP(hp);
         ChangeGun();
         gm = GameObject.FindObjectOfType<GameManager>();
-        gunAudio = gameObject.GetComponent<AudioSource>();
+        gunAudioSource = gameObject.GetComponent<AudioSource>();
     }
 
     public void SetMaxHP(int maxHP)
@@ -114,16 +115,26 @@ public class Player : Unit
 
     private void LoadGunAudio(AudioClip clip)
     {
-        if (clip != gunAudio.clip)
+        if (clip != gunAudioSource.clip)
         {
-            gunAudio.clip = clip;
+            gunAudioSource.clip = clip;
         }
 
-        if (gunAudio.isPlaying)
+        if (gunAudioSource.isPlaying)
         {
-            gunAudio.Stop();
+            gunAudioSource.Stop();
         }
 
-        gunAudio.Play();
+        gunAudioSource.Play();
+    }
+
+    public void PickupAudio()
+    {
+        if (gunAudioSource.clip != pickupAudio)
+        {
+            gunAudioSource.clip = pickupAudio;
+        }
+
+        gunAudioSource.Play();
     }
 }

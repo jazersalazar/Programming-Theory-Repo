@@ -3913,6 +3913,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1113224856
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7873457956602124364, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
+      propertyPath: m_Name
+      value: Assault Rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873457956602124367, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873457956602124367, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873457956602124367, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873457956602124367, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.518655
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873457956602124367, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873457956602124367, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873457956602124367, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873457956602124367, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873457956602124367, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873457956602124367, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873457956602124367, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d796c73809da4b4abe91259af228cf5, type: 3}
 --- !u!1 &1146800272
 GameObject:
   m_ObjectHideFlags: 0
@@ -7542,6 +7599,10 @@ PrefabInstance:
       propertyPath: defaultGun
       value: 
       objectReference: {fileID: 7873457956602124365, guid: 28c079768191c4b43bc62a627adeb8f3, type: 3}
+    - target: {fileID: 7953396885309290939, guid: 2ec5264993ac23b479d108fd7b3a1515, type: 3}
+      propertyPath: pickupAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 6638616e08989ac46826c42ce1658f48, type: 3}
     - target: {fileID: 7953396885309290939, guid: 2ec5264993ac23b479d108fd7b3a1515, type: 3}
       propertyPath: totalBullets
       value: 

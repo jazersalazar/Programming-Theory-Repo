@@ -11,7 +11,9 @@ public class Healthkit : MonoBehaviour
         if (other.tag == "Player")
         {
             int newHP = other.GetComponent<Status>().HP + recoverPoints;
-            other.GetComponent<Player>().SetHP(newHP);
+            Player player = other.GetComponent<Player>();
+            player.SetHP(newHP);
+            player.PickupAudio();
             Destroy(gameObject);
         }
     }

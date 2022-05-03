@@ -14,8 +14,10 @@ public class Gun : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            Player player = other.GetComponent<Player>();
+            player.ChangeGun(gameObject.GetComponent<Gun>());
+            player.PickupAudio();
             Destroy(gameObject);
-            other.GetComponent<Player>().ChangeGun(gameObject.GetComponent<Gun>());
         }
     }
 }
