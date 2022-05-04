@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public GameObject crosshair;
     public Transform firePoint;
     public Player player;
+    public CameraShake cameraShake;
 
     [Space]
     [Header("Prefabs:")]
@@ -67,6 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         if (shootGun && !isReloading && int.Parse(player.magazineBullets.text) > 0)
         {
+            StartCoroutine(cameraShake.Shake(.1f, .1f));
             int bulletCount = player.playerGun.bulletsPerFire;
             player.ReduceBullets(bulletCount);
             
