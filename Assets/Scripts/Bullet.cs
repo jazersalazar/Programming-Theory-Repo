@@ -6,12 +6,10 @@ public class Bullet : MonoBehaviour
 {
     public GameObject explosion;
     private GameManager gm;
-    private SpawnManager sm;
 
     private void Start()
     {
         gm = GameObject.FindObjectOfType<GameManager>();
-        sm = GameObject.FindObjectOfType<SpawnManager>();
     }
 
     private void OnBecameInvisible()
@@ -31,14 +29,6 @@ public class Bullet : MonoBehaviour
             // TODO: add particle effects
             // GameObject e = Instantiate(explosion) as GameObject;
             // e.transform.position = transform.position;
-
-            // TODO: maybe move this on destroy event of enemy
-            // Drop random items with 10% chance
-            bool dropItems = Random.Range(0f, 100.0f) >= 90f ? true : false;
-            if (dropItems)
-            {
-                sm.SpawnDroppables(other.transform);
-            }
 
             gm.AddKill();
             if (other.GetComponent<Status>().IsSpecial)

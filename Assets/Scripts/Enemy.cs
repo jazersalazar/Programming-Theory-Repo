@@ -23,17 +23,21 @@ public abstract class Enemy : Unit
     protected Player player;
 
     private GameManager gm;
+    private SpawnManager sm;
 
     protected override void Start() 
     {
         base.Start();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-        player = target.GetComponent<Player>();
         SetColor();
-        gm = GameObject.FindObjectOfType<GameManager>();
+
         enemyAudioSource = gameObject.AddComponent<AudioSource>();
         enemyAudioSource.volume = 0.1f;
         LoadEnemyAudio(spawnAudio, true);
+
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        player = target.GetComponent<Player>();
+        gm = GameObject.FindObjectOfType<GameManager>();
+        sm = GameObject.FindObjectOfType<SpawnManager>();
     }
 
     protected virtual void Update()
@@ -72,7 +76,6 @@ public abstract class Enemy : Unit
         }
     }
 
-    // TODO: change function name since it now has a different purpose
     protected virtual void PlayerInRange()
     {
         if (canAttack)
@@ -129,5 +132,15 @@ public abstract class Enemy : Unit
 
         enemyAudioSource.loop = loop;
         enemyAudioSource.Play();
+    }
+
+    private void OnDestroy()
+    {
+        // Drop random items with 10% chance
+        bool dropItems = Random.Range(0f, 100.0f) >= 90f ? true : false;
+        if (dropItems)
+        {
+            sm.SpawnDroppables(gameObject.transform);
+        }
     }
 }
