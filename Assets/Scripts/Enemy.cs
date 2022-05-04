@@ -15,6 +15,10 @@ public abstract class Enemy : Unit
     public bool isMoving = false;
     public Vector2 destination;
 
+    public AudioSource enemyAudioSource;
+    public AudioClip spawnAudio;
+    public AudioClip attackAudio;
+
     protected Transform target;
     protected Player player;
 
@@ -27,6 +31,9 @@ public abstract class Enemy : Unit
         player = target.GetComponent<Player>();
         SetColor();
         gm = GameObject.FindObjectOfType<GameManager>();
+        enemyAudioSource = gameObject.AddComponent<AudioSource>();
+        enemyAudioSource.volume = 0.1f;
+        LoadEnemyAudio(spawnAudio, true);
     }
 
     protected virtual void Update()
@@ -52,6 +59,11 @@ public abstract class Enemy : Unit
             float step = speed * Time.deltaTime;
             gameObject.transform.position = Vector2.MoveTowards(transform.position, destination, step);
             isMoving = true;
+            
+            if (enemyAudioSource.clip != spawnAudio)
+            {
+                LoadEnemyAudio(spawnAudio, true);
+            }
         }
         else
         {
@@ -65,6 +77,7 @@ public abstract class Enemy : Unit
     {
         if (canAttack)
         {
+            LoadEnemyAudio(attackAudio);
             player.TakeDamage(attackDamage);
             StartCoroutine(AttackCooldown());
         }
@@ -100,5 +113,21 @@ public abstract class Enemy : Unit
         {
             isMoving = false;
         }
+    }
+
+    private void LoadEnemyAudio(AudioClip clip, bool loop = false)
+    {
+        if (clip != enemyAudioSource.clip)
+        {
+            enemyAudioSource.clip = clip;
+        }
+
+        if (enemyAudioSource.isPlaying)
+        {
+            enemyAudioSource.Stop();
+        }
+
+        enemyAudioSource.loop = loop;
+        enemyAudioSource.Play();
     }
 }

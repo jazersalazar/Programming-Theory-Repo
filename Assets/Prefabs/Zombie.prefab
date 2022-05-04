@@ -347,6 +347,8 @@ MonoBehaviour:
   canAttack: 1
   isMoving: 0
   destination: {x: 0, y: 0}
+  spawnAudio: {fileID: 8300000, guid: 38452b24065627343b43c0214b49d7fa, type: 3}
+  attackAudio: {fileID: 8300000, guid: fa07f88e407045747a52a402d31533bf, type: 3}
 --- !u!114 &3217596437890958268
 MonoBehaviour:
   m_ObjectHideFlags: 0
