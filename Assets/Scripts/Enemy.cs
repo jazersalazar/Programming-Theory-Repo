@@ -15,6 +15,7 @@ public abstract class Enemy : Unit
     public bool isMoving = false;
     public Vector2 destination;
 
+    public GameObject bloodSplat;
     public AudioSource enemyAudioSource;
     public AudioClip spawnAudio;
     public AudioClip attackAudio;
@@ -136,6 +137,8 @@ public abstract class Enemy : Unit
 
     private void OnDestroy()
     {
+        Instantiate(bloodSplat, gameObject.transform.position, Quaternion.identity);
+        // Destroy(blood, 2f);
         // Drop random items with 10% chance
         bool dropItems = Random.Range(0f, 100.0f) >= 90f ? true : false;
         if (dropItems)

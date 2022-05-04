@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour 
 {
-    public GameObject explosion;
     private GameManager gm;
 
     private void Start()
@@ -26,10 +25,6 @@ public class Bullet : MonoBehaviour
 
         if (other.tag == "Enemy")
         {
-            // TODO: add particle effects
-            // GameObject e = Instantiate(explosion) as GameObject;
-            // e.transform.position = transform.position;
-
             gm.AddKill();
             if (other.GetComponent<Status>().IsSpecial)
             {
