@@ -9,7 +9,9 @@ Pathway's <b>Mission 3</b> : OOP Programming Theory
 - Spawn Manager
 
 ## TODOs
-- Particle System
+- Custom Cursor
+- Enemy Health System
+- Fire rate System
 
 ---
 View Collection: <a href="https://github.com/jazersalazar/Unity-Junior-Programmer">Unity Junior Programmer</a>
