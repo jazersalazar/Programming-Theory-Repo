@@ -8,8 +8,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuUIHandler : MonoBehaviour 
 {
+    private GameManager gm;
+
+    private void Start()
+    {
+        gm = GameObject.FindObjectOfType<GameManager>();
+    }
+
     public void StartNew()
     {
+        gm.quitting = true;
         SceneManager.LoadScene("MainScene");
     }
 

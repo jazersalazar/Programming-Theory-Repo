@@ -135,10 +135,12 @@ public abstract class Enemy : Unit
         enemyAudioSource.Play();
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
+        if (gm.quitting) return;
+
         Instantiate(bloodSplat, gameObject.transform.position, Quaternion.identity);
-        // Destroy(blood, 2f);
+
         // Drop random items with 10% chance
         bool dropItems = Random.Range(0f, 100.0f) >= 90f ? true : false;
         if (dropItems)

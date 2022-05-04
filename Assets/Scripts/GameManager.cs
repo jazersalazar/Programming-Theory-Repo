@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public bool isAlive = true;
     public int killCount = 0;
     public int specialKillCount = 0;
+    public bool quitting = false;
 
     public GameObject gameoverScreen;
     public GameObject player;
@@ -31,5 +32,10 @@ public class GameManager : MonoBehaviour
     public void AddSpecialKill()
     {
         specialKillCount++;
+    }
+    
+    private void OnApplicationQuit()
+    {
+        quitting = true;
     }
 }
